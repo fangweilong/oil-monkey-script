@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name        New script - javastack.cn
-// @namespace   Violentmonkey Scripts
+// @name        技术网站关闭人机检测
+// @namespace   技术网站关闭人机检测
 // @match       https://www.javastack.cn/article/*
-// @incloud     *://*.javastack.cn/*
-// @incloud     *://*.didispace.com/*
+// @match       *://*.didispace.com/*
 // @description 关闭一些技术网站的必须要关注公众号的“人机检测”功能，使阅读更加流畅
 // @description 已支持：Java技术栈，程序员DD
+// @require     http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js
 // @grant       none
 // @version     1.0
 // @author      Teler
@@ -37,7 +37,7 @@ if(url[0]===currentURL){
  * name 唯一的class名
  */
 function removeDom(name){
-  document.querySelector(name).remove();
+  $(name).remove();
 }
 
 
@@ -46,5 +46,5 @@ function removeDom(name){
  * name id名
  */
 function setHeight(name){
-  document.querySelector(name).style.height='auto';
+  $(name).css('style','height:auto;');
 }
